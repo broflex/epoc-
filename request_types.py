@@ -19,8 +19,8 @@ def put_req(token, url, payload):
     except Exception as e:
         print e
         sys.exit('Error in put_request')
-    content = response
-    return response
+    content = response.json()
+    return content
 
 
 
@@ -37,5 +37,4 @@ def get_req(token, url):
         print e
         sys.exit('Error in put_request')
     content = response.json()
-    print content
-    return response
+    return content

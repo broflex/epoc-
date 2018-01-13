@@ -37,7 +37,6 @@ def get_current_all():
     return response
 
 def get_current_uri(current=get_current_all()):
-    print current['item']['uri']
     try:
         return current['item']['uri']
     except:
@@ -51,14 +50,10 @@ def get_random_song(category):
     return song_uri
 
 
-#def authorize():
-#    url = 'https://accounts.spotify.com/authorize'
-#    get_req(url, )
-
 
 def process():
     current_song = get_current_all()
-    current_song_uri = current_song['item']['uri']
+    #current_song_uri = current_song['item']['uri']
     current_song_uri = get_current_uri()
     print "Current song URI: {0}".format(current_song_uri)
 
