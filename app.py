@@ -2,20 +2,32 @@
 # -*- coding: utf-8 -*-
 
 
-from flask import Flask
+from flask import Flask, jsonify
+from spotify import get_mood_levels
 
-from main.py import authorize
 app = Flask(__name__)
 
-AUTHORIZED = False
+'''
+Return mood levels:
+{
+    moods: {
+        happy: x,
+        sad: x,
+        focused: x
+    }
+}
+'''
+@app.route("/api/v1.0/mood_levels", method=['GET'])
+def mood_levels():
+    return jsonify({'moods': get_mood_levels()})
 
-@app.route("/")
-def home():
-    if not  AUTHORIZED:
-        return redirect(url_for('login'))
+
+
+@app.route("/api/v1.0/test", method=['GET'])
+def test():
     return "Hello World!"
 
-@app.route("/login")
-def authorize():
 
 
+if __name__ == '__main__':
+    app.run(debug=True)

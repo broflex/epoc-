@@ -16,6 +16,10 @@ CATEGORIES = CONFIG.get('general', 'keywords')
 
 TOKEN = CONFIG.get('general', 'token')
 
+HAPPY = 50
+SAD = 30
+FOCUED = 30
+
 
 def start_song(uri):
     print "Trying to start song: {0}".format(uri)
@@ -48,6 +52,13 @@ def get_random_song(category):
     song = choice(songs)
     song_uri = CONFIG.get(category, song)
     return song_uri
+
+def get_mood_levels():
+    moods = dict()
+    moods['happy'] = HAPPY
+    moods['sad'] = SAD
+    moods['focused'] = FOCUSED
+    return moods
 
 
 
