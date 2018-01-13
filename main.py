@@ -14,7 +14,7 @@ CONFIG.read('config.ini')
 
 CATEGORIES = CONFIG.get('general', 'keywords')
 
-TOKEN = 'BQAcEAh2jNp6NGkw87nt27W0sVaiZnetNq73opIr70sFHopsUahk3k_ZuXlEQgsciahXhG_y41dT0AeAbFqIDS-UKjP5VqYI3TG0Z8zxMK59wAZkCrgKAW1KDrrKuHXj1ovvyjbyXCHprJaaX5V7sJBtSHv0-nZ8i8ue7UmhZPEKzBpQNW-Z7CoVxx9CgkQXd2CVlmMdokk6c7ibICW9whwO6P6_WqukOnLKm3_bj7t8kECaeJTn0vDxZbcq1ehdKw'
+TOKEN = CONFIG.get('general', 'token')
 
 
 def start_song(uri):
