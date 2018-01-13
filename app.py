@@ -17,13 +17,13 @@ Return mood levels:
     }
 }
 '''
-@app.route("/api/v1.0/mood_levels", method=['GET'])
+@app.route("/api/v1.0/mood_levels", methods=['GET'])
 def mood_levels():
     return jsonify({'moods': get_mood_levels()})
 
 
 
-@app.route("/api/v1.0/test", method=['GET'])
+@app.route("/api/v1.0/test", methods=['GET'])
 def test():
     return "Hello World!"
 
