@@ -37,7 +37,5 @@ def get_req(token, url):
         print e
         sys.exit('Error in put_request')
     content = response.json()
-    
-    if content['error']
     print content
     return response
